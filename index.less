@@ -1,0 +1,181 @@
+//初始所有样式
+body, div, h1{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  color: white;
+  text-decoration: underline;
+  &:hover{
+    color: #9c9c9c;
+  }
+  &:visited{
+    color: white;
+  }
+}
+
+body{
+  overflow-x: hidden;
+  color: white;
+  position: relative;
+  >.backgroundImg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('./assets/background.png');
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  >.cover{
+    position: absolute;
+    top: 320px;
+    left: 60%;
+    >div{
+      display: inline-block;
+      color: white;
+      font-size: 36px;
+      margin: 0 10px;
+    }
+    >div:first-child{
+      background: url('./assets/me.jpg');
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      opacity: 0;
+      vertical-align: middle;
+    }
+    >div:nth-child(2){
+      border-right: 5px solid white;
+      height: 100px;
+      vertical-align: middle;
+
+    }
+
+    >div:nth-child(3){
+      opacity: 0;
+      vertical-align: middle;
+    }
+
+    >div:last-child{
+      font-size: 12px;
+      display: block;
+      margin-top:50px;
+      padding-left: 20px;
+      width: 200px;
+      text-align: justify;
+      opacity: 0;
+      cursor: pointer;
+      &:after{
+        content: '';
+        width: 100%;
+        display: inline-block;
+      }
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  >.container{
+    opacity: 0;
+    >.resumeTitle{
+      font-size: 38px;
+      margin-top: 100px;
+      >div{
+        text-align: center;
+      }
+
+    }
+  }
+
+  //所有标签头的统一样式,一个div中
+  .tipStyle{
+    margin: 20px 0;
+    >div{
+      font-size: 25px;
+    }
+    >span{
+      font-size: 14px;
+      vertical-align: bottom;
+    }
+    >span:last-child{
+      display: inline-block;
+      font-size: 20px;
+      line-height: 32px;
+    }
+  }
+  //布局调试辅助
+  //div{
+  //  border: 1px solid white;
+  //}
+  .content-margin>div{
+    >div:not(:first-child){
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+      >div{
+        margin: 10px 0;
+      }
+    }
+  }
+    &:last-child{
+      margin-bottom: 150px;
+    }
+
+}
+
+.enclosure {
+  position: relative;
+  .showPicture {
+    cursor: pointer;
+    position: relative;
+    > div:last-child {
+      height: 100px;
+      width: 100px;
+      border: 1px solid #fff;
+      overflow: hidden;
+      border-radius: 3%;
+    }
+    > div:first-child {
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      color: transparent;
+      transition: all 1s ease;
+      &:hover {
+        background: rgba(0, 0, 0, 0.66);
+        color: white;
+      }
+      line-height: 170px;
+      font-size: 10px;
+      text-align: center;
+
+    }
+  }
+}
+
+
+body>.picShow{//响应式大图显示
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.71);
+  @media screen and (min-width: 767px) {
+    .showLg { //点击查看大图
+      position: absolute;
+      top: 2%;
+      left: 30%;
+      border: 1px solid white;
+
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .showLg { //点击查看大图
+      position: absolute;
+    }
+  }
+}
+
